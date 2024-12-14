@@ -139,15 +139,9 @@ class _MusicListViewState extends State<MusicListView> {
                       });
                     },
                     onPause: () async {
-                      if (musicController.isPause) {
-                        setState(() {
-                          musicController.resumeMusic();
-                        });
-                      } else {
-                        setState(() {
+                       setState(() {
                           musicController.pauseMusic();
                         });
-                      }
                     }),
               )
             : null,

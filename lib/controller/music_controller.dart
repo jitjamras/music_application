@@ -39,18 +39,13 @@ class MusicController {
   Future pauseMusic() async {
     try {
       isPause = !isPause;
-      await player.pause();
+      if (isPause) {
+        await player.pause();
+      } else {
+        await player.play();
+      }
     } catch (e) {
-      debugPrint(e.toString());
-    }
-  }
-
-  Future resumeMusic() async {
-    try {
-      isPause = !isPause;
-      await player.play();
-    } catch (e) {
-      debugPrint(e.toString());
+      debugPrint('Error pausing music: ${e.toString()}');
     }
   }
 
@@ -79,6 +74,10 @@ class MusicController {
   }
 
   Future<void> selectMusic(int index) async {
+    if (index < 0 || index >= musicList.length) {
+      debugPrint('Invalid music index: $index');
+      return;
+    }
     currentMusic = musicList[index];
     await playMusic(currentMusic!);
   }
@@ -87,7 +86,8 @@ class MusicController {
     int index = musicList.indexWhere(
       (Music element) => element == currentMusic,
     );
-    currentMusic = musicList[(index - 1) % musicList.length];
+    if (index == -1) return;
+    currentMusic = musicList[(index - 1 + musicList.length) % musicList.length];
     await playMusic(currentMusic!);
   }
 
@@ -95,6 +95,7 @@ class MusicController {
     int index = musicList.indexWhere(
       (Music element) => element == currentMusic,
     );
+    if (index == -1) return; // Current music not found
     currentMusic = musicList[(index + 1) % musicList.length];
     await playMusic(currentMusic!);
   }

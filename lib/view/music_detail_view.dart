@@ -103,15 +103,9 @@ class _MusicDetailViewState extends State<MusicDetailView> {
               ),
               GestureDetector(
                 onTap: () async {
-                  if (_musicController.isPause) {
-                    setState(() {
-                      _musicController.resumeMusic();
-                    });
-                  } else {
-                    setState(() {
-                      _musicController.pauseMusic();
-                    });
-                  }
+                  setState(() {
+                    _musicController.pauseMusic();
+                  });
                 },
                 child: _musicController.isPause
                     ? const Icon(
