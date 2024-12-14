@@ -4,13 +4,26 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### How to run this repo
+1. Clone this repo.<br/>
+2. Open file main.dart in folder Lib.<br/>
+3. run command -> flutter run .<br/>
+(make sure open emulator or connect mobile device)<br/>
 
-A few resources to get you started if this is your first Flutter project:
+### Before Select Music
+<img src = "https://github.com/user-attachments/assets/acba7118-e940-4971-bb89-f34ae23bc2bf" width="512"/>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Select Music
+- Show Miniplay Bottom (Can Tap for Show Detail Music)
+<img src = "https://github.com/user-attachments/assets/5fb8be4d-248c-4b0a-a011-0c651d173a2f" width="512"/>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Detail Music
+- Forward Music
+- Previous Music
+- Pause or Resume Music
+<img src = "https://github.com/user-attachments/assets/ef321ea9-362d-4d5a-8967-4315e6e8264b" width="512"/>
+
+
+  
+
+
